@@ -4,34 +4,26 @@
 </head>
 <html>
 <body>
-    <h1 style="text-align: center;">It is <span id="daysTill"></span> Christmas morning</h1>
+    <h1 style="text-align: center;">It is <span id="daysTill"></span> till Christmas morning</h1>
 <body></body>
     <script>
       var countDownDate = new Date("Dec 25, 2022 06:30:00").getTime();  
       var x = setInterval(function() {
-        // Update the count down every 1 second
-        var x = setInterval(function() {
-
-        // Get today's date and time
         var now = new Date().getTime();
 
-        // Find the distance between now and the count down date
         var distance = countDownDate - now;
 
-        // Time calculations for days, hours, minutes and seconds
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Display the result in the element with id="demo"
-        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+        document.getElementById("daysTill").innerHTML = days + "d " + hours + "h "
         + minutes + "m " + seconds + "s ";
 
-        // If the count down is finished, write some text
         if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
+        document.getElementById("daysTill").innerHTML = "EXPIRED";
         }
         }, 1000);
 
